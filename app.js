@@ -16,10 +16,9 @@ const app = express();
 async function loadApp() {
   try {
     await mongo.connect();
+
+    app.use(cors());
     app.use(express.json());
-
-    app.use(cors({ origin: ["crm-app2.netlify.com"] }));
-
     app.use("/users", usersRoutes);
 
     app.use(middleware.authCheck);
