@@ -1,6 +1,8 @@
 const express = require("express");
 const { config } = require("dotenv").config();
 
+const cors = require("cors");
+
 const jwt = require("jsonwebtoken");
 
 const mongo = require("./shared/mongo");
