@@ -27,7 +27,7 @@ async function loadApp() {
     //Logging middleware
     app.use(middleware.loginMiddleware);
 
-    app.listen(process.env.PORT, () => {
+    app.listen(process.env.PORT || 3001, () => {
       console.log(`Server started At ${process.env.PORT}`);
     });
   } catch (err) {
